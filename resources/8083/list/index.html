@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>
+		WebServ
+	</title>
+	<link rel="stylesheet" href="styles/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat';">
+	<nav class="navbar navbar-expand m-3">
+		<div class="container-fluid justify-content-center">
+			<div class="navbar-nav">
+				<a class="nav-link" href="../">Галя, отмена</a>
+				<a class="nav-link" href="../document/">Ссылка</a>
+				<a class="nav-link" href="https://ya.ru/">Редирект</a>
+				<a class="nav-link" href="https://www.youtube.com">Еще&nbsp;редирект</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron m-5 pt-3">
+		<div class="row justify-content-around align-items-center">
+			<div class="col-4">
+				<img class="bg-img" src="resources/foto.jpeg">
+			</div>
+			<div class="col-4">
+				<h1>Добро пожаловать!</h1>
+				<h5>Вы находитесь на сайте нашей команды по разработке вебсерва.</h5>
+				<h6>Вы можете вступить в наши ряды, для этого нужно всего лишь ...</h6>
+				<form action="formpage.html" method="post" enctype="multipart/form-data">
+					<input type="file" id="browse" name="fileupload" style="display: none" onChange="HandleChange();" />
+					<p id="filename"></p>
+					<input type="button" value="Прикрепить резюме" id="fakeBrowse" class="btn btn-outline-primary" onclick="HandleBrowseClick();" />
+					<input type="submit" value="Отправить" class="btn btn-primary">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid mb-4">
+		<div class="row justify-content-center">
+			<div class="col-3">
+				<h2>Наши кандидаты:</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid mt-5" id="video">
+		<div class="row justify-content-center">
+			<div class="col-5 d-flex justify-content-start">
+				<video src="resources/win.mp4" controls allowfullscreen type="video/mp4" width="500px"></video>
+			</div>
+			<div class="col-5 d-flex justify-content-end">
+				<video src="resources/videoplayback11.mp4" controls allowfullscreen type="video/mp4" width="500px"></video>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container mt-5 pt-4 footer">
+		<hr>
+		<div class="row justify-content-center">
+			<div class="col-8 d-flex justify-content-start">
+				<h4 class="m-3 p-2">Спонсор</h4>
+				<a class="m-3 p-2" href="https://profile.intra.42.fr/"><img
+						src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg" width="30px" /></a>
+			</div>
+			<div class="col-4 d-flex justify-content-end">
+				<a class="m-3 p-2" href="https://profile.intra.42.fr/users/pleoma">
+					<h4>@pleoma</h4>
+				</a>
+				<a class="m-3 p-2" href="https://profile.intra.42.fr/users/bsarai">
+					<h4>@bsarai</h4>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function HandleBrowseClick() {
+			var fileinput = document.getElementById("browse");
+			fileinput.click();
+		}
+		function HandleChange() {
+			var fileinput = document.getElementById("browse");
+			var textinput = document.getElementById("filename");
+			textinput.innerHTML = fileinput.value;
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>
+		WebServ
+	</title>
+	<link rel="stylesheet" href="styles/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat';">
+	<nav class="navbar navbar-expand m-3">
+		<div class="container-fluid justify-content-center">
+			<div class="navbar-nav">
+				<a class="nav-link" href="../">Галя, отмена</a>
+				<a class="nav-link" href="../list/">Вторая&nbsp;ссылка</a>
+				<a class="nav-link" href="https://ya.ru/">Редирект</a>
+				<a class="nav-link" href="https://www.youtube.com">Еще&nbsp;редирект</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron mb-5 pb-5">
+		<div class="row justify-content-around align-items-center">
+			<div class="col-4">
+				<img class="bg-img" src="resources/otec.jpeg">
+			</div>
+			<div class="col-4">
+				<h1 class="m-3">Кем будешь?</h1>
+				<button class="btn btn-primary m-3" id="btnStop" name="stop" data-toggle="modal"
+					data-target="#isSaveModal" onclick="onCallClick();">Представиться</button>
+				<a class="btn btn-danger m-3" href="#video">Пройти мимо</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid mt-5 pt-5" id="video">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-5 m-5 p-5">
+				<h2 class="text-right">На этот раз тебе повезло, но ...</h2>
+				<h2 class="text-right">Как говорится, кто дважды ошибается, тот единожды помирает</h2>
+			</div>
+			<div class="col-5 ml-5 pl-5">
+				<video src="resources/videoplayback.mp4" controls allowfullscreen type="video/mp4"></video>
+			</div>
+		</div>
+	</div>
+
+	<div class="container mt-5 pt-4 footer">
+		<hr>
+		<div class="row justify-content-center">
+			<div class="col-8 d-flex justify-content-start">
+				<h4 class="m-3 p-2">Спонсор</h4>
+				<a class="m-3 p-2" href="https://profile.intra.42.fr/"><img
+						src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg" width="30px" /></a>
+			</div>
+			<div class="col-4 d-flex justify-content-end">
+				<a class="m-3 p-2" href="https://profile.intra.42.fr/users/pleoma">
+					<h4>@pleoma</h4>
+				</a>
+				<a class="m-3 p-2" href="https://profile.intra.42.fr/users/bsarai">
+					<h4>@bsarai</h4>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="isSaveModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Ну давай, назовись...</h5>
+				</div>
+				<div class="modal-body">
+					<form action="test.py" method="post" class="container">
+						<div class="container mb-4">
+							<p>Нам же всем так интересно</p>
+							<div class="row justify-content-center">
+								<div class="col-5"><input class="form-control" type="text" name="name"
+										autocomplete="off" placeholder="Сюда имя"></div>
+								<div class="col-5"><input class="form-control" type="text" name="surname"
+										autocomplete="off" placeholder="Сюда фамилию"></div>
+								<div class="col-2"><input type="submit" value="Отправить" class="btn btn-primary"></div>
+							</div>
+						</div>
+						<div class="modal-footer justify-content-end">
+							<button type="button" class="btn btn-secondary" id="btnBack"
+								onclick="onBackClick();">Назад</button>
+							<button type="button" class="btn btn-disabled d-none" id="btnNoBack">Нет пути назад</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function onBackClick() {
+			document.getElementById("btnBack").classList.add("d-none");
+			document.getElementById("btnNoBack").classList.remove("d-none");
+		}
+
+		function onCallClick() {
+			document.getElementById("btnBack").classList.remove("d-none");
+			document.getElementById("btnNoBack").classList.add("d-none");
+		}
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
